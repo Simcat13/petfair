@@ -2,6 +2,7 @@ package com.kh.cats.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +15,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @Tag(name = "테스트", description = "테스트 구현")
 @CrossOrigin
 @RestController
-@RequestMapping("/")
 public class CatsTest {
 	
 	@Autowired
@@ -24,5 +24,9 @@ public class CatsTest {
 	public void insert(@RequestBody TestDto testDto) {
 		testDao.insert(testDto);
 	}
-
+	
+	@GetMapping("/")
+	public String home(){
+		return "member/test";
+	}
 }
