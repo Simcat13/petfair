@@ -1,6 +1,7 @@
 package com.kh.cats.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,7 +15,7 @@ import com.kh.cats.dto.TestDto;
 import io.swagger.v3.oas.annotations.tags.Tag;
 @Tag(name = "테스트", description = "테스트 구현")
 @CrossOrigin
-@RestController
+@Controller
 public class CatsTest {
 	
 	@Autowired
