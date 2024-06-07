@@ -64,8 +64,8 @@
 
 .head-bottom {
 	margin: 0px;
-	border-top: 1px solid #ACB8BD;
-	border-bottom: 1px solid #ACB8BD;
+	/* border-top: 1px solid #ACB8BD;
+	border-bottom: 1px solid #ACB8BD;   홈 네비바에 선긋기*/
 }
 
 .head li {
@@ -84,7 +84,7 @@
 .home>a {
 	font-size: 30px;
 	font-weight: 800;
-	color: rgb(71, 163, 255);
+	color: rgb(251,222,35);
 }
 
 .cs, .currency, .notice {
@@ -164,16 +164,15 @@
 				<ul class="menu cell center">
 					<li class="home w-25"><a href="${pageContext.request.contextPath}"> 야옹이 </a></li>
 
-					<li><a href="${pageContext.request.contextPath}/document/buying-info">이용안내</a></li>
+					<li><a href="${pageContext.request.contextPath}">관람안내</a></li>
 
-					<li><a href="${pageContext.request.contextPath}/document/fee-info">수수료 및 요금표</a></li>
+					<li><a href="${pageContext.request.contextPath}">커뮤니티</a></li>
 
-					<li><a href="${pageContext.request.contextPath}/board/notice/list">공지사항</a></li>
+					<li><a href="${pageContext.request.contextPath}">공지사항</a></li>
 
-					<li><a href="${pageContext.request.contextPath}/board/review/list">이용후기</a></li>
+					<li><a href="${pageContext.request.contextPath}">이용후기</a></li>
 
-					<li><a href="${pageContext.request.contextPath}/member/ship/request"><button
-								class="btn delivery">배송대행 신청하기</button></a></li>
+					<li><a href="${pageContext.request.contextPath}">참가신청</a></li>
 
 				</ul>
 			</div>
