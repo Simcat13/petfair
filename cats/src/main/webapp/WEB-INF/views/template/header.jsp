@@ -88,7 +88,6 @@
 }
 
 .cs, .currency, .notice {
-	border: 0.1mm solid #ACB8BD;
 	width: 33.3333%;
 	font-size: 14px;
 	text-align: left;
@@ -106,10 +105,6 @@
 	border-left: none;
 }
 
-.currency {
-	border-left: none;
-	border-right: none;
-}
 
 .notice {
 	border-right: none;
@@ -118,12 +113,6 @@
 .link-notice {
 	position: relative;
 	float: right;
-}
-
-.btn.delivery {
-	background-color: rgb(0, 151, 150);
-	color: white;
-	white-space: nowrap
 }
 </style>
 
