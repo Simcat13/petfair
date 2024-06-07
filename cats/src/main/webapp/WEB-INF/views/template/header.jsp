@@ -114,6 +114,16 @@
 	position: relative;
 	float: right;
 }
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000; /* 풋터가 위에 올 수 있도록 z-index 설정 */
+}
+
+.section {
+    padding-bottom: 200px; /* 풋터의 높이만큼 padding-bottom 추가 */
+}
 </style>
 
 <!-- 내가 만든 JS -->
@@ -148,7 +158,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="head-bottom">
+		<div class="head-bottom mb-30">
 			<div class="nav container">
 				<ul class="menu cell center">
 					<li class="home w-25"><a href="${pageContext.request.contextPath}"> 야옹이 </a></li>

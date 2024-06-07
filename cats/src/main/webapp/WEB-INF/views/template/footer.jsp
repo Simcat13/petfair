@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 	</div>
 <div class="head head-bottom">
-	<div class="footer" style="background-color: rgb(90, 90, 88);">
+	<div class="footer" style="background-color: rgb(90,90,88); position: fixed; bottom: 0; width: 100%;">
 		<div class="container" style="width: 100%; padding: 0 20px;">
 			<div class="footer-top white-font">
 				<div class="cell flex-cell center auto-width">
@@ -37,6 +37,7 @@
 .footer .menu li a:hover {
 	text-decoration: underline;
 }
+
 </style>
 </div>
 </div>
