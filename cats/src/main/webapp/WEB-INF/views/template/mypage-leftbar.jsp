@@ -88,43 +88,11 @@ img.newProfile { /*프로필 공간 고정*/
 		<div class="title title-body">
 			<div class="title-body-main">
 				<div class="title-body-text">
-					<a class="link main-title">구매대행</a>
+					<a class="link main-title">참관신청</a>
 				</div>
 				<div class="title-body-sub">
 					<div class="title-body-text">
-						<a class="link" href="${pageContext.request.contextPath}/member/po/request">구매대행 신청서 작성</a>
-					</div>
-					<div class="title-body-text">
-						<a class="link" href="${pageContext.request.contextPath}/member/mypage/purchase/pendingPayment">구매대행
-							결제대기</a>
-					</div>
-					<div class="title-body-text">
-						<a class="link" href="${pageContext.request.contextPath}/member/mypage/purchase/processList">배송
-							진행 상황</a>
-					</div>
-					<div class="title-body-text">
-						<a class="link" href="${pageContext.request.contextPath}/member/mypage/purchase/list">구매대행 신청 내역</a>
-					</div>
-				</div>
-			</div>
-			<div class="title-body-main">
-				<div class="title-body-text">
-					<a class="link main-title">배송대행</a>
-				</div>
-				<div class="title-body-sub">
-					<div class="title-body-text">
-						<a class="link" href="${pageContext.request.contextPath}/member/ship/request">배송대행 신청서 작성</a>
-					</div>
-					<div class="title-body-text">
-						<a class="link" href="${pageContext.request.contextPath}/member/mypage/ship/pendingPayment">배송대행
-							결제대기</a>
-					</div>
-					<div class="title-body-text">
-						<a class="link" href="${pageContext.request.contextPath}/member/mypage/ship/processList">배송 진행
-							상황</a>
-					</div>
-					<div class="title-body-text">
-						<a class="link" href="${pageContext.request.contextPath}/member/mypage/ship/list">배송대행 신청 내역</a>
+						<a class="link" href="${pageContext.request.contextPath}/member/po/request">참관신청 내역</a>
 					</div>
 				</div>
 			</div>

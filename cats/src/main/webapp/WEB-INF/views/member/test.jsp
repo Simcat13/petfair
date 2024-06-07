@@ -20,7 +20,7 @@ h6 {
 <br>
 <div class="container container-body">
 <!-- 사이드바는 용도에 맞게 넣으면됩니다	 -->
-	<jsp:include page="/WEB-INF/views/template/document-sidebar.jsp"></jsp:include>
+	<jsp:include page="/WEB-INF/views/template/board-sidebar.jsp"></jsp:include>
 	<!-- 내용자리 -->
 	<div class="container inner-container">
 		<div class="content content-head">

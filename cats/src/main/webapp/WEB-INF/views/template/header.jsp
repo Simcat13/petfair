@@ -64,8 +64,8 @@
 
 .head-bottom {
 	margin: 0px;
-	border-top: 1px solid #ACB8BD;
-	border-bottom: 1px solid #ACB8BD;
+	/* border-top: 1px solid #ACB8BD;
+	border-bottom: 1px solid #ACB8BD;   홈 네비바에 선긋기*/
 }
 
 .head li {
@@ -84,11 +84,10 @@
 .home>a {
 	font-size: 30px;
 	font-weight: 800;
-	color: rgb(71, 163, 255);
+	color: rgb(251,222,35);
 }
 
 .cs, .currency, .notice {
-	border: 0.1mm solid #ACB8BD;
 	width: 33.3333%;
 	font-size: 14px;
 	text-align: left;
@@ -106,10 +105,6 @@
 	border-left: none;
 }
 
-.currency {
-	border-left: none;
-	border-right: none;
-}
 
 .notice {
 	border-right: none;
@@ -119,11 +114,15 @@
 	position: relative;
 	float: right;
 }
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000; /* 풋터가 위에 올 수 있도록 z-index 설정 */
+}
 
-.btn.delivery {
-	background-color: rgb(0, 151, 150);
-	color: white;
-	white-space: nowrap
+.section {
+    padding-bottom: 200px; /* 풋터의 높이만큼 padding-bottom 추가 */
 }
 </style>
 
@@ -159,21 +158,20 @@
 				</div>
 			</div>
 		</div>
-		<div class="head-bottom">
+		<div class="head-bottom mb-30">
 			<div class="nav container">
 				<ul class="menu cell center">
 					<li class="home w-25"><a href="${pageContext.request.contextPath}"> 야옹이 </a></li>
 
-					<li><a href="${pageContext.request.contextPath}/document/buying-info">이용안내</a></li>
+					<li><a href="${pageContext.request.contextPath}">관람안내</a></li>
 
-					<li><a href="${pageContext.request.contextPath}/document/fee-info">수수료 및 요금표</a></li>
+					<li><a href="${pageContext.request.contextPath}">커뮤니티</a></li>
 
-					<li><a href="${pageContext.request.contextPath}/board/notice/list">공지사항</a></li>
+					<li><a href="${pageContext.request.contextPath}">공지사항</a></li>
 
-					<li><a href="${pageContext.request.contextPath}/board/review/list">이용후기</a></li>
+					<li><a href="${pageContext.request.contextPath}">이용후기</a></li>
 
-					<li><a href="${pageContext.request.contextPath}/member/ship/request"><button
-								class="btn delivery">배송대행 신청하기</button></a></li>
+					<li><a href="${pageContext.request.contextPath}">참가신청</a></li>
 
 				</ul>
 			</div>
