@@ -83,22 +83,22 @@ h6 {
                     var pageName;
                     switch (index) {
                     case 0:
-                        pageName = '미국'
+                        pageName = '고양이'
                         break;
                     case 1:
-                        pageName = '영국'
+                        pageName = '야옹이'
                         break;
                     case 2:
-                        pageName = '독일'
+                        pageName = '강아지'
                         break;
                     case 3:
-                        pageName = '일본'
+                        pageName = '멍멍이'
                         break;
                     case 4:
-                        pageName = '중국'
+                        pageName = '짹짹이'
                         break;
                     case 5:
-                        pageName = '스페인'
+                        pageName = '꽥꽥이'
                         break;
                     }
                     return '<span class="' + className + '">' + pageName
