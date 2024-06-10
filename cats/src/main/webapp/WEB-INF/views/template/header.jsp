@@ -135,6 +135,9 @@
 .navbar-nav .nav-item {
 	margin-right: 5em; /* 네비 목록에서 간격 벌리기 */
 }
+.dropdown-toggle::after {
+    display:none;
+}
 </style>
 
 <!-- 내가 만든 JS -->
