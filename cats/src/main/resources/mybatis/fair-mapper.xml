@@ -1,0 +1,24 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="fair">
+
+	<!-- 박람회 등록 -->
+    <insert id="insert">
+        insert into fair(
+        	fair_name, fair_sdate, fair_edate, fair_entry_num, fair_visitor_num, 
+            fair_info, fair_entry_stime, fair_entry_etime, fair_visitor_stime, fair_visitor_etime
+        ) 
+        values (
+            #{fair_name}, #{fair_sdate}, #{fair_edate}, #{fair_entry_num}, #{fair_visitor_num}, 
+            #{fair_info}, #{fair_entry_stime}, #{fair_entry_etime}, #{fair_visitor_stime}, #{fair_visitor_etime}
+        )
+    </insert>
+    
+    <!-- 방금 등록한 fair_no -->
+    <select id="sequence" resultType="int">
+    	select LAST_INSERT_ID()
+	</select>
+    	
+</mapper>
