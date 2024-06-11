@@ -2,22 +2,22 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
-
+<jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>    
+    
 <form action="login" method="post" autocomplete="off">
 
 <div class="container">
 
 <div class="center">
-	<h1>로그인</h1>
+	<h1>로그인 (회사)</h1>
 </div>
 <div class="center">
 	<label>아이디</label>
-	<input type="text" name="memberId" required>
+	<input type="text" name="companyId" required>
 </div>
 <div class="center">
 	<label>비밀번호</label>
-	<input type="password" name="memberPw" required>
+	<input type="password" name="companyPw" required>
 </div>
 <div class="center my-10">
 	<button class="btn positive">로그인</button>
@@ -31,13 +31,6 @@
 
 </div>
 
-</form>
-
-<div class="center mt-20">
-<form action="${pageContext.request.contextPath}/company/login" method="get">
-	<button type="submit">회사 로그인 하러가기</button>
-</form>
-</div>
-
+</form>    
 
 <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
