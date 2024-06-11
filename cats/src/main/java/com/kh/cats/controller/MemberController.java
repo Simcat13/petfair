@@ -29,8 +29,10 @@ public class MemberController {
 	}
 	
 	@PostMapping("/join")
-	public void join(@ModelAttribute MemberDto memberDto) {
+	public String join(@ModelAttribute MemberDto memberDto) {
 		memberDao.insert(memberDto);
+		
+		return "redirect:/";
 	}
 	
 	
