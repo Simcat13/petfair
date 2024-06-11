@@ -50,9 +50,14 @@
 
 	<!-- 비밀번호 변경 -->
 	<update id="updatePw">
-    update member 
-    set member_pw = #{memberPw} 
-    where member_id = #{memberId}
+	    update member 
+	    set member_pw = #{memberPw} 
+	    where member_id = #{memberId}
+	</update>
+	
+	<!-- 로그인 시간 업뎃 -->
+	<update id="updateLogin">
+		update member set member_login = CURRENT_TIMESTAMP where member_id = #{memberId}
 	</update>
 	
 	

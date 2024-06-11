@@ -13,7 +13,17 @@ public class MemberDao {
 	private SqlSession sqlSession;
 	
 	//가입
-	public void inser(MemberDto memberDto) {
+	public void insert(MemberDto memberDto) {
 		sqlSession.insert("member.insert", memberDto);
+	}
+	
+	//ID 셀렉원
+	public MemberDto selectOne(String memberId) {
+		return sqlSession.selectOne("member.find", memberId);
+	}
+	
+	//로그인시간 업데이트
+	public boolean updateLogin(String memberId) {
+		return sqlSession.update("member.updateLogin", memberId) > 0;
 	}
 }
