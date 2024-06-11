@@ -5,20 +5,25 @@
 <mapper namespace="fair">
 
 	<!-- 박람회 등록 -->
-    <insert id="insert">
-        insert into fair(
-        	fair_name, fair_sdate, fair_edate, fair_entry_num, fair_visitor_num, 
-            fair_info, fair_entry_stime, fair_entry_etime, fair_visitor_stime, fair_visitor_etime
-        ) 
-        values (
-            #{fair_name}, #{fair_sdate}, #{fair_edate}, #{fair_entry_num}, #{fair_visitor_num}, 
-            #{fair_info}, #{fair_entry_stime}, #{fair_entry_etime}, #{fair_visitor_stime}, #{fair_visitor_etime}
-        )
-    </insert>
-    
-    <!-- 방금 등록한 fair_no -->
-    <select id="sequence" resultType="int">
-    	select LAST_INSERT_ID()
+	<insert id="insert">
+		insert into fair(
+			fair_name, fair_sdate, fair_edate, fair_entry_num, fair_visitor_num,
+			fair_info, fair_entry_stime, fair_entry_etime, fair_visitor_stime,
+			fair_visitor_etime
+		)
+		values (
+			#{fairName}, #{fairSdate}, #{fairEdate}, #{fairEntryNum}, #{fairVisitorNum},
+			#{fairInfo},
+			str_to_date(#{fairEntryStime}, '%Y-%m-%d %H:%i'),
+			str_to_date(#{fairEntryEtie}, '%Y-%m-%d %H:%i'),
+			str_to_date(#{fairVisitorStime}, '%Y-%m-%d %H:%i'),
+			str_to_date(#{fairVisitorEtime}, '%Y-%m-%d %H:%i')
+		)
+	</insert>
+
+	<!-- 방금 등록한 fair_no -->
+	<select id="sequence" resultType="int">
+		select LAST_INSERT_ID()
 	</select>
-    	
+
 </mapper>
