@@ -13,8 +13,8 @@ public class MemberDto {
 	private String memberBirth;
 	private String memberEmail;
 	private String memberZipcode;
-	private String memberAddr1;
-	private String memberAddr2;
+	private String memberAdd1;
+	private String memberAdd2;
 	private String memberContact1;
 	private String memberContact2;
 	private String memberLevel;

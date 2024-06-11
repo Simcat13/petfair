@@ -162,10 +162,8 @@
 									href="${pageContext.request.contextPath}/member/mypage">mypage</a></li>
 							</c:when>
 							<c:otherwise>
-								<li><a
-									href="${pageContext.request.contextPath}/member/login">로그인</a></li>
-								<li><a
-									href="${pageContext.request.contextPath}/member/join">회원가입</a></li>
+								<li><a href="${pageContext.request.contextPath}/member/login">로그인</a></li>
+								<li><a href="${pageContext.request.contextPath}/member/choiceJoin">회원가입</a></li>
 							</c:otherwise>
 						</c:choose>
 						<li><a

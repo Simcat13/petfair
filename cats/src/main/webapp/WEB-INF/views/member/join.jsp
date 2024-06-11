@@ -222,7 +222,7 @@
 	
 	    //주소는 세 개의 입력창이 모두 입력되거나 안되거나 둘 중 하나
 	    $("[name=memberAddress2]").blur(function(){
-	        var post = $("[name=memberZip]").val();
+	        var post = $("[name=memberZipcode]").val();
 	        var address1 = $("[name=memberAdd1]").val();
 	        var address2 = $("[name=memberAdd2]").val();
 	
@@ -231,7 +231,7 @@
 	
 	        state.memberAddressValid = isClear || isFill;
 	
-	        $("[name=memberPost], [name=memberAddress1], [name=memberAddress2]")
+	        $("[name=memberZipcode], [name=memberAdd1], [name=memberAdd2]")
 	                .removeClass("success fail")
 	                .addClass(state.memberAddressValid ? "success" : "fail");
 	    });
@@ -269,7 +269,7 @@
                     }
 
                     // 우편번호와 주소 정보를 해당 필드에 넣는다.
-                    $("[name=memberZip]").val(data.zonecode);
+                    $("[name=memberZipcode]").val(data.zonecode);
                     $("[name=memberAdd1]").val(addr);
                     
                     // 커서를 상세주소 필드로 이동한다.
@@ -279,7 +279,7 @@
         });
         
         $(".btn-address-clear").click(function(){
-        	$("[name=memberZip]").val("");
+        	$("[name=memberZipcode]").val("");
         	$("[name=memberAdd1]").val("");
         	$("[name=memberAdd2]").val("");
         });
@@ -290,7 +290,7 @@
 <form action="join" method="post" autocomplete="off" class="check-form">
 
 <div class="container w-500">
-	<h1 class="center">회원가입</h1>
+	<h1 class="center">회원가입(회원)</h1>
 </div>
 
 <div>
@@ -348,7 +348,7 @@
 		<label>주소</label>
 	</div>
 	<div class="center">
-            <input type="text" name="memberZip"  readonly
+            <input type="text" name="memberZipcode"  readonly
                     placeholder="우편번호" size="6" maxlength="6">
             <button type="button" class="btn positive btn-address-search">
                 <i class="fa-solid fa-magnifying-glass"></i>
