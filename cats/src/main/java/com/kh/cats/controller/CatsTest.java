@@ -21,12 +21,12 @@ public class CatsTest {
 	@Autowired
 	private TestDao testDao;
 
-	@PostMapping("/test") // 등록
+	@PostMapping("/test1") // 등록
 	public void insert(@RequestBody TestDto testDto) {
 		testDao.insert(testDto);
 	}
 	
-	@GetMapping("/")
+	@GetMapping("/test")
 	public String home(){
 		return "member/test";
 	}

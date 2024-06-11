@@ -20,16 +20,11 @@ h6 {
 <br>
 <div class="container container-body">
 <!-- 사이드바는 용도에 맞게 넣으면됩니다	 -->
-	<jsp:include page="/WEB-INF/views/template/board-sidebar.jsp"></jsp:include>
+	<jsp:include page="/WEB-INF/views/template/admin-sidebar.jsp"></jsp:include>
 	<!-- 내용자리 -->
 	<div class="container inner-container">
-		<div class="content content-head">
-			<div class="content-head-text">
-				<i class="fa-solid fa-pause"></i>제목칸
-			</div>
-		</div>
 		<div class="content content-body">
-		여기에 글 쓰시고요
+		<h1>고양이가 세상을 지배한다</h1>
 		</div>
 	</div>
 </div>

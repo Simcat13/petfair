@@ -21,61 +21,50 @@
 			</div>
 			<div class="title-body-main">
 				<div class="title-body-text">
-					<a href="${pageContext.request.contextPath}/admin/po/orderList" class="link main-title">구매대행 관리</a>
+					<a href="${pageContext.request.contextPath}" class="link main-title">박람회 관리</a>
 				</div>
 				<div class="title-body-sub">
 					<div class="title-body-text">
-						<a href="${pageContext.request.contextPath}/admin/po/orderList" class="link">구매대행 처리대기</a>
+						<a href="${pageContext.request.contextPath}/admin/fair/insert" class="link">박람회 등록</a>
 					</div>
 					<div class="title-body-text">
-						<a href="${pageContext.request.contextPath}/admin/po/processList" class="link">구매대행 배송대기</a>
-					</div>
-					<div class="title-body-text">
-						<a href="${pageContext.request.contextPath}/admin/po/processingList" class="link">구매대행 배송현황</a>
-					</div>
-					<div class="title-body-text">
-						<a href="${pageContext.request.contextPath}/admin/po/completeList" class="link">구매대행 완료목록</a>
-					</div>
-					<div class="title-body-text">
-						<a href="${pageContext.request.contextPath}/admin/po/cancelList" class="link">취소/반품/미수취</a>
+						<a href="${pageContext.request.contextPath}" class="link">부스 등록</a>
 					</div>
 				</div>
 			</div>
 			<div class="title-body-main">
 				<div class="title-body-text">
-					<a href="${pageContext.request.contextPath}/admin/ship/orderList" class="link main-title">배송대행 관리</a>
+					<a href="${pageContext.request.contextPath}" class="link main-title">참가업체 관리</a>
 				</div>
 				<div class="title-body-sub">
 					<div class="title-body-text">
-						<a href="${pageContext.request.contextPath}/admin/ship/orderList" class="link">배송대행 처리대기</a>
-					</div>
-					<div class="title-body-text">
-						<a href="${pageContext.request.contextPath}/admin/ship/processList" class="link">배송대행 배송대기</a>
-					</div>
-					<div class="title-body-text">
-						<a href="${pageContext.request.contextPath}/admin/ship/processingList" class="link">구매대행 배송현황</a>
-					</div>
-					<div class="title-body-text">
-						<a href="${pageContext.request.contextPath}/admin/ship/completeList" class="link">배송대행 완료목록</a>
-					</div>
-					<div class="title-body-text">
-						<a href="${pageContext.request.contextPath}/admin/ship/cancelList" class="link">취소/반품/미수취</a>
+						<a href="${pageContext.request.contextPath}" class="link">참가업체 목록</a>
 					</div>
 				</div>
 			</div>
 			<div class="title-body-main">
 				<div class="title-body-text">
-					<a href="${pageContext.request.contextPath}/admin/po/settlement" class="link main-title">정산 관리</a>
+					<a href="${pageContext.request.contextPath}" class="link main-title">참관객 관리</a>
 				</div>
 				<div class="title-body-sub">
 					<div class="title-body-text">
-						<a href="${pageContext.request.contextPath}/admin/po/settlement" class="link">정산내역(일별)</a>
+						<a href="${pageContext.request.contextPath}" class="link">참관객 목록</a>
+					</div>
+				</div>
+			</div>
+			<div class="title-body-main">
+				<div class="title-body-text">
+					<a href="${pageContext.request.contextPath}" class="link main-title">통계</a>
+				</div>
+				<div class="title-body-sub">
+					<div class="title-body-text">
+						<a href="${pageContext.request.contextPath}" class="link">정산내역(일별)</a>
 					</div>
 					<div class="title-body-text">
-						<a href="${pageContext.request.contextPath}/admin/po/vatList" class="link">부가세 신고자료 조회</a>
+						<a href="${pageContext.request.contextPath}" class="link">관람객 분석</a>
 					</div>
 					<div class="title-body-text">
-						<a href="${pageContext.request.contextPath}/admin/credit/creditList" class="link">크레딧 충전관리</a>
+						<a href="${pageContext.request.contextPath}" class="link">뭐 또 있나</a>
 					</div>
 				</div>
 			</div>
