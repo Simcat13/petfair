@@ -25,6 +25,9 @@
 				</div>
 				<div class="title-body-sub">
 					<div class="title-body-text">
+						<a href="${pageContext.request.contextPath}/admin/fair/list" class="link">박람회 목록</a>
+					</div>
+					<div class="title-body-text">
 						<a href="${pageContext.request.contextPath}/admin/fair/insert" class="link">박람회 등록</a>
 					</div>
 					<div class="title-body-text">
