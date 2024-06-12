@@ -4,20 +4,24 @@
 
 <mapper namespace="fair">
 
-	<!-- 박람회 등록 -->
+	<!-- Create 박람회 등록 -->
 	<insert id="insert">
 		insert into fair(
-			fair_name, fair_sdate, fair_edate, fair_entry_num, fair_visitor_num,
-			fair_info, fair_entry_stime, fair_entry_etime, fair_visitor_stime,
-			fair_visitor_etime
+		fair_name, fair_sdate, fair_edate,
+		fair_entry_num, fair_visitor_num,
+		fair_info, fair_entry_stime,
+		fair_entry_etime, fair_visitor_stime,
+		fair_visitor_etime
 		)
 		values (
-			#{fairName}, #{fairSdate}, #{fairEdate}, #{fairEntryNum}, #{fairVisitorNum},
-			#{fairInfo},
-			str_to_date(#{fairEntryStime}, '%Y-%m-%d %H:%i'),
-			str_to_date(#{fairEntryEtie}, '%Y-%m-%d %H:%i'),
-			str_to_date(#{fairVisitorStime}, '%Y-%m-%d %H:%i'),
-			str_to_date(#{fairVisitorEtime}, '%Y-%m-%d %H:%i')
+		#{fairName}, #{fairSdate}, #{fairEdate}, #{fairEntryNum},
+		#{fairVisitorNum},
+		#{fairInfo},
+		str_to_date(#{fairEntryStime}, '%Y-%m-%d
+		%H:%i'),
+		str_to_date(#{fairEntryEtime}, '%Y-%m-%d %H:%i'),
+		str_to_date(#{fairVisitorStime}, '%Y-%m-%d %H:%i'),
+		str_to_date(#{fairVisitorEtime}, '%Y-%m-%d %H:%i')
 		)
 	</insert>
 
@@ -25,5 +29,53 @@
 	<select id="sequence" resultType="int">
 		select LAST_INSERT_ID()
 	</select>
+
+	<!-- Read -->
+	<select id="find" resultType="FairDto">
+		select * from fair where fair_no = #{fairNo}
+	</select>
+
+	<select id="list" resultType="FairDto">
+		<!-- top n query header 삽입 -->
+		<include refid="top-n-header"></include>
+		select * from fair order by fair_no desc
+		<!-- top n query footer 삽입 -->
+		<include refid="top-n-footer"></include>
+	</select>
+
+	<select id="count" resultType="Integer">
+	    <choose>
+	        <when test="column != null and keyword != null">
+	            select count(*) from fair
+	            where instr(#{column}, #{keyword}) > 0
+	        </when>
+	        <otherwise>
+	            select count(*) from fair
+	        </otherwise>
+	    </choose>
+	</select>
+
+    <sql id="top-n-header">
+        <if test="beginRow != null and endRow != null">
+            select * from (
+            	select ROW_NUMBER() OVER (ORDER BY fair_no DESC) as rn, TMP.* from (
+        </if>
+    </sql>
+
+    <sql id="top-n-footer">
+        <if test="beginRow != null and endRow != null">
+            ) TMP
+            	) TMP_ALIAS where rn between #{beginRow} and #{endRow}
+        </if>
+    </sql>
+    
+    <!-- Update -->
+     <update id="editStatus">
+     	<![CDATA[
+	    	update fair set fair_status = '종료' where  fair_status = '진행 중' and fair_edate < curdate()
+	    ]]>
+    </update>
+    
+
 
 </mapper>
