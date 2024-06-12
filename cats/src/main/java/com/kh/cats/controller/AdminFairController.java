@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kh.cats.dao.FairDao;
 import com.kh.cats.dto.FairDto;
+import com.kh.cats.vo.PageVO;
 
 
 @Controller
@@ -43,4 +44,11 @@ public class AdminFairController {
 //		
 //		
 //	}
+	
+	//박람회 목록
+	@GetMapping("/list")
+	public String list(@ModelAttribute PageVO pageVO,
+			@RequestParam(required = false) String status, Model model) {
+		
+	}
 }

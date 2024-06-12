@@ -15,7 +15,7 @@
 			#{fairName}, #{fairSdate}, #{fairEdate}, #{fairEntryNum}, #{fairVisitorNum},
 			#{fairInfo},
 			str_to_date(#{fairEntryStime}, '%Y-%m-%d %H:%i'),
-			str_to_date(#{fairEntryEtie}, '%Y-%m-%d %H:%i'),
+			str_to_date(#{fairEntryEtime}, '%Y-%m-%d %H:%i'),
 			str_to_date(#{fairVisitorStime}, '%Y-%m-%d %H:%i'),
 			str_to_date(#{fairVisitorEtime}, '%Y-%m-%d %H:%i')
 		)
