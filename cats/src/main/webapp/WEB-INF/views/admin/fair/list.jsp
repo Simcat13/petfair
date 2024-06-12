@@ -34,24 +34,33 @@ h6 {
 					<thead>
 						<tr>
 							<th>번호</th>
-							<th>박람회 제목</th>
+							<th>박람회명</th>
 							<th>시작일자</th>
 							<th>종료일자</th>
+							<th>상태</th>
 						</tr>
 					</thead>
 					<tbody>
 						<c:forEach var="fairDto" items="${fairList}">
 							<tr>
 								<td>${fairDto.fairNo}</td>
-								<td>${fairDto.fairName}</td>
+								<td>
+									<a href="detail?fairNo=${fairDto.fairNo}">${fairDto.fairName}</a>
+								</td>
 								<td>${fairDto.fairSdate}</td>
 								<td>${fairDto.fairEdate}</td>
+								<td>${fairDto.fairStatus}</td>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
 			</div>
 		</div>
+		<div class="cell right">
+			<a href="insert" class="btn btn-secondary">박람회 등록</a> 
+		</div>
+		<%-- 네비게이터 --%>
+		<jsp:include page="/WEB-INF/views/template/navigator.jsp"></jsp:include>
 	</div>
 </div>
 

@@ -35,5 +35,15 @@ public class FairDao {
 		return sqlSession.selectOne("fair.count", pageVO);
 	}
 	
+	//스케줄서비스- 박람회 종료날짜가 지난경우 자동갱신
+	public boolean editStatus() {
+		return sqlSession.update("fair.editStatus") > 0;
+	}
+	
+	//박람회 상세
+	public FairDto selectOne(int fairNo) {
+		return sqlSession.selectOne("fair.find", fairNo);
+	}
+	
 	
 }

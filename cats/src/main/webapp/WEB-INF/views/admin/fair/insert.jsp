@@ -76,7 +76,10 @@ h6 {
 							<input type="text" class="form-control" id="fair_visitor_etime" name="fairVisitorEtime">
 						</div>
 					</div>
-					<button type="submit" class="btn btn-primary">등록</button>
+					<div class="cell right">
+						<a href="list" class="btn btn-secondary">목록으로</a>
+						<button type="submit" class="btn btn-primary">등록</button>
+					</div>
 				</form>
 			</div>
 		</div>

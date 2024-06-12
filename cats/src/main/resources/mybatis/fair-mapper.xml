@@ -32,8 +32,7 @@
 
 	<!-- Read -->
 	<select id="find" resultType="FairDto">
-		select * from fair where fair_no =
-		#{fairNo}
+		select * from fair where fair_no = #{fairNo}
 	</select>
 
 	<select id="list" resultType="FairDto">
@@ -59,15 +58,24 @@
     <sql id="top-n-header">
         <if test="beginRow != null and endRow != null">
             select * from (
-            select ROW_NUMBER() OVER (ORDER BY fair_no DESC) as rn, TMP.* from (
+            	select ROW_NUMBER() OVER (ORDER BY fair_no DESC) as rn, TMP.* from (
         </if>
     </sql>
 
     <sql id="top-n-footer">
         <if test="beginRow != null and endRow != null">
             ) TMP
-            ) TMP_ALIAS where rn between #{beginRow} and #{endRow}
+            	) TMP_ALIAS where rn between #{beginRow} and #{endRow}
         </if>
     </sql>
+    
+    <!-- Update -->
+     <update id="editStatus">
+     	<![CDATA[
+	    	update fair set fair_status = '종료' where  fair_status = '진행 중' and fair_edate < curdate()
+	    ]]>
+    </update>
+    
+
 
 </mapper>

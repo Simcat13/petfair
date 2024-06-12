@@ -18,4 +18,5 @@ public class FairDto {
 	private String fairEntryEtime;
 	private String fairVisitorStime;
 	private String fairVisitorEtime;
+	private String fairStatus;
 }
