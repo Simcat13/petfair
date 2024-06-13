@@ -391,7 +391,7 @@
 	<div class="col">		
 		<div class="center">
 			<label class="col-1">주소</label>
-			<input class="tool col-1" type="text" name="memberZipcode"  readonly
+			<input class="tool col-1" type="text" name="memberZipcode" readonly
 	                    placeholder="우편번호" size="6" maxlength="6">          
 	        <button type="button" class="btn positive btn-address-search">
 	        	<i class="fa-solid fa-magnifying-glass"></i>
