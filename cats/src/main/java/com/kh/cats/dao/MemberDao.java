@@ -26,4 +26,9 @@ public class MemberDao {
 	public boolean updateLogin(String memberId) {
 		return sqlSession.update("member.updateLogin", memberId) > 0;
 	}
+	
+	//이름 찾기
+	public MemberDto selectOneMemberName(String memberName) {
+		return sqlSession.selectOne("member.name",memberName);
+	}
 }

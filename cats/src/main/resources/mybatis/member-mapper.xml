@@ -6,7 +6,7 @@
 
 <mapper namespace="member">
 
-	<!-- 등록 -->
+	<!-- 회원가입 -->
 	<insert id="insert">
 		INSERT INTO member (
 		member_id, 
@@ -14,9 +14,9 @@
 		member_name, 
 		member_birth, 
 		member_email, 
-		member_zipcode, 
-		member_add1, 
-		member_add2, 
+		<if test="memberZipcode != null"> member_zipcode,</if> 
+		<if test="memberAdd1 != null">member_add1,</if> 
+		<if test="memberAdd2 != null">member_add2,</if> 
 		member_contact1, 
 		member_contact2, 
 		member_interest, 
@@ -27,9 +27,9 @@
 		#{memberName}, 
 		#{memberBirth}, 
 		#{memberEmail}, 
-		#{memberZipcode}, 
-		#{memberAdd1}, 
-		#{memberAdd2}, 
+		<if test="memberZipcode != null">#{memberZipcode}, </if> 
+		<if test="memberAdd1 != null">#{memberAdd1}, </if> 
+		<if test="memberAdd2 != null">#{memberAdd2}, </if> 
 		#{memberContact1}, 
 		#{memberContact2}, 
 		#{memberInterest}, 
@@ -60,5 +60,9 @@
 		update member set member_login = CURRENT_TIMESTAMP where member_id = #{memberId}
 	</update>
 	
+	<!-- 이름 -->
+	<select id="name" resultType="MemberDto">
+		select * from member where member_name = #{memberName}
+	</select>
 	
 </mapper>

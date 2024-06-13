@@ -14,7 +14,6 @@ import com.kh.cats.dto.MemberDto;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-@CrossOrigin
 @RequestMapping("/member")
 public class MemberController {
 
@@ -36,7 +35,11 @@ public class MemberController {
 	public String join(@ModelAttribute MemberDto memberDto) {
 		memberDao.insert(memberDto);
 		
-		return "redirect:/";
+		return "redirect:joinSuccess";
+	}
+	@RequestMapping("/joinSuccess")
+	public String joinSuccess() {
+		return "member/joinSuccess";
 	}
 	
 	
