@@ -58,7 +58,7 @@
     <sql id="top-n-header">
         <if test="beginRow != null and endRow != null">
             select * from (
-            	select ROW_NUMBER() OVER (ORDER BY fair_no DESC) as rn, TMP.* from (
+            	select row_number() over (order by fair_no desc) as rn, TMP.* from (
         </if>
     </sql>
 
@@ -76,6 +76,22 @@
 	    ]]>
     </update>
     
+	<update id="edit">
+		update fair 
+		set
+			fair_name = #{fairName}, 
+			fair_sdate = #{fairSdate}, 
+			fair_edate = #{fairEdate}, 
+			fair_entry_num = #{fairEntryNum}, 
+			fair_visitor_num = #{fairVisitorNum}, 
+			fair_info = #{fairInfo}, 
+			fair_entry_stime = #{fairEntryStime}, 
+			fair_entry_etime = #{fairEntryEtime}, 
+			fair_visitor_stime = #{fairVisitorStime}, 
+			fair_visitor_etime = #{fairVisitorEtime}, 
+			fair_status = #{fairStatus} 
+		where fair_no = #{fairNo}
+	</update>    
 
 
 </mapper>

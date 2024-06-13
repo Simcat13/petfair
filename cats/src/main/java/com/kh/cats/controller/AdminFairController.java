@@ -70,4 +70,22 @@ public class AdminFairController {
 		return "admin/fair/list";
 	}
 	
+	//박람회 수정
+	@GetMapping("/edit")
+	public String edit(@RequestParam int fairNo, Model model) {
+		FairDto fairDto = fairDao.selectOne(fairNo);
+		model.addAttribute("fairDto", fairDto);
+		return "admin/fair/edit";
+	}
+	
+	@PostMapping("/edit")
+	public String edit(@ModelAttribute FairDto fairDto) {
+		if(fairDao.edit(fairDto)) {
+			return "redirect:detail?fairNo=" + fairDto.getFairNo();
+		}
+		else {
+			return "error";
+		}
+	}
+	
 }
