@@ -13,7 +13,7 @@
 	        memberPwCheckValid : false,
 	        memberNameValid : false,
 	        memberEmailValid : false,
-	        memberContactValid : false,
+	        memberContact1Valid : false,
 	        memberBirthValid : true, //선택항목
 	        memberAddValid : true,//선택항목
 	        //객체에 함수를 변수처럼 생성할 수 있다
@@ -22,7 +22,7 @@
 	            return this.memberIdValid 
 	                    && this.memberPwValid && this.memberPwCheckValid
 	                    && this.memberNameValid && this.memberEmailValid
-	                    && this.memberBirthValid && this.memberContactValid
+	                    && this.memberBirthValid && this.memberContact1Valid
 	                    && this.memberAddValid;
 	        },
 	    };
@@ -293,11 +293,11 @@
 <div class="row mt-4">
 	<div class="col">
 		<div class="center">
-			<label>
+			<label class="col-1">
 				아이디
 				<i class="fa-solid fa-asterisk red"></i>
 			</label>
-			<input class="tool" type="text" name="memberId" placeholder="영문 소문자시작, 숫자 포함 8~20자" onblur="checkId();" required>
+			<input class="tool col-2" type="text" name="memberId" placeholder="영문 소문자시작, 숫자 포함 8~20자" required>
 			<div class="fail-feedback">아이디는 소문자 시작, 숫자 포함 8~20자로 작성하세요</div>
 			<div class="fail2-feedback">이미 사용중인 아이디입니다</div>
 		</div>
@@ -307,11 +307,11 @@
 <div class="row mt-4">
 	<div class="col">
 		<div class="center">
-			<label>
+			<label class="col-1">
 				비밀번호
 				<i class="fa-solid fa-asterisk red"></i>
 			</label>
-			<input class="tool" type="password" name="memberPw" placeholder="영문 대소문자, 숫자, 특수문자 1개 이상 포함 6~15자" required>
+			<input class="tool col-2" type="password" name="memberPw" placeholder="대소문자, 숫자, 특수문자 포함 6~15자" required>
 			<div class="fail-feedback">비밀번호에는 반드시 영문 대,소문자와 숫자, 특수문자가 포함되어야 합니다</div>
 		</div>
 	</div>
@@ -319,11 +319,11 @@
 <div class="row mt-4">
 	<div class="col">
 		<div class="center">
-			<label>
+			<label class="col-1">
 				비밀번호 확인
 				<i class="fa-solid fa-asterisk red"></i>
 			</label>
-			<input class="tool" type="password" id="pw-reinput" placeholder="비밀번호를 한 번 더 입력하세요" required>
+			<input class="tool col-2" type="password" id="pw-reinput" placeholder="비밀번호를 한 번 더 입력하세요" required>
 			<div class="fail-feedback">비밀번호가 일치하지 않습니다</div>
 		    <div class="fail2-feedback">비밀번호를 먼저 입력하세요</div>
 		</div>
@@ -333,11 +333,11 @@
 <div class="row mt-4">
 	<div class="col">
 		<div class="center">
-			<label>
+			<label class="col-1">
 				이름
 				<i class="fa-solid fa-asterisk red"></i>
 			</label>
-			<input class="tool" type="text" name="memberName" placeholder="한국 이름" required>
+			<input class="tool col-2" type="text" name="memberName" placeholder="한국 이름" required>
 			<div class="fail-feedback">이름은 한글 2~7자로 입력해주세요</div>
 		</div>
 	</div>
@@ -346,11 +346,11 @@
 <div class="row mt-4">
 	<div class="col">		
 		<div class="center">
-			<label>
+			<label class="col-1">
 				이메일
 				<i class="fa-solid fa-asterisk red"></i>
 			</label>
-			<input class="tool" type="email" name="memberEmail" placeholder="email@email.com" required>
+			<input class="tool col-2" type="email" name="memberEmail" placeholder="email@email.com" required>
 		
 		</div>
 	</div>
@@ -359,11 +359,11 @@
 <div class="row mt-4">
 	<div class="col">		
 		<div class="center">
-			<label>
+			<label class="col-1">
 				연락처1
 				<i class="fa-solid fa-asterisk red"></i>
 			</label>
-			<input class="tool" type="tel" name="memberContact1" placeholder="연락처 1" required>
+			<input class="tool col-2" type="tel" name="memberContact1" placeholder="숫자만 입력" required>
 			<div class="fail-feedback">올바르지 않은 형식입니다</div>
 		</div>
 	</div>
@@ -372,8 +372,8 @@
 <div class="row mt-4">
 	<div class="col">		
 		<div class="center">
-			<label>연락처2</label>
-			<input class="tool" type="tel" name="memberContact2" placeholder="연락처 1">
+			<label class="col-1">연락처2</label>
+			<input class="tool col-2" type="tel" name="memberContact2" placeholder="숫자만 입력">
 		</div>
 	</div>
 </div>
@@ -381,8 +381,8 @@
 <div class="row mt-4">
 	<div class="col">		
 		<div class="center">
-	    	<label>생년월일</label>
-	   		<input class="tool" type="date" name="memberBirth">
+	    	<label class="col-1">생년월일</label>
+	   		<input class="tool col-2" type="date" name="memberBirth">
 		</div>
 	</div>
 </div>
@@ -390,22 +390,15 @@
 <div class="row mt-4">
 	<div class="col">		
 		<div class="center">
-			<label>주소</label>
-		</div>
-	</div>
-</div>
-		
-<div class="row mt-4">
-	<div class="col">		
-		<div class="center">
-	            <input type="text" name="memberZipcode"  readonly
-	                    placeholder="우편번호" size="6" maxlength="6">
-	            <button type="button" class="btn positive btn-address-search">
-	                <i class="fa-solid fa-magnifying-glass"></i>
-	            </button>        
-	            <button type="button" class="btn negative btn-address-clear">
-	            	<i class="fa-solid fa-xmark"></i>
-	            </button>
+			<label class="col-1">주소</label>
+			<input class="tool col-1" type="text" name="memberZipcode"  readonly
+	                    placeholder="우편번호" size="6" maxlength="6">          
+	        <button type="button" class="btn positive btn-address-search">
+	        	<i class="fa-solid fa-magnifying-glass"></i>
+	        </button>        
+	        <button type="button" class="btn negative btn-address-clear">
+	        	<i class="fa-solid fa-xmark"></i>
+	        </button>
 		</div>
 	</div>
 </div>
@@ -413,8 +406,9 @@
 <div class="row mt-2">
 	<div class="col">		
 		<div class="center">
-	            <input type="text" name="memberAdd1" 
-	                    placeholder="기본주소" readonly>
+			<label class="col-1"></label>
+	    	<input class="tool col-2" type="text" name="memberAdd1" 
+	        		placeholder="기본주소" readonly>
 		</div>
 	</div>
 </div>
@@ -422,8 +416,9 @@
 <div class="row mt-2">
 	<div class="col">		
 		<div class="center">
-	            <input type="text" name="memberAdd2" 
-	                    placeholder="상세주소">
+			<label class="col-1"></label>
+	    	<input class="tool col-2" type="text" name="memberAdd2" 
+	               	placeholder="상세주소">
 		</div>
 	</div>
 </div>

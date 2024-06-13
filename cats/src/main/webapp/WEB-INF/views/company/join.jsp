@@ -44,96 +44,162 @@
 
 <form action="join" method="post" autocomplete="off" class="check-form">
 
-<div class="container w-500">
-	<h1 class="center">회원가입(회사)</h1>
+<div class="row mt-4">
+	<div class="col">
+		<div class="p-4 rounded text-center">
+        	<h3 class="center">회원가입 (회사용)</h3>
+        </div>	
+	</div>
 </div>
 
-<div>
-	<div class="center">
-		<label>
-			아이디
-			<i class="fa-solid fa-asterisk red"></i>
-		</label>
-		<input type="text" name="companyId" placeholder="아이디쓸거입력하셈" required>
+<div class="row mt-4">
+	<div class="col">
+		<div class="center">
+			<label class="col-1">
+				아이디
+				<i class="fa-solid fa-asterisk red"></i>
+			</label>
+			<input class="tool col-2" type="text" name="companyId" placeholder="영문 소문자시작, 숫자 포함 8~20자" onblur="checkId();" required>
+			<div class="fail-feedback">아이디는 소문자 시작, 숫자 포함 8~20자로 작성하세요</div>
+			<div class="fail2-feedback">이미 사용중인 아이디입니다</div>
+		</div>
 	</div>
-	<div class="center">
-		<label>
-			비밀번호
-			<i class="fa-solid fa-asterisk red"></i>
-		</label>
-		<input type="password" name="companyPw" placeholder="비밀번호486" required>
+</div>
+
+<div class="row mt-4">
+	<div class="col">
+		<div class="center">
+			<label class="col-1">
+				비밀번호
+				<i class="fa-solid fa-asterisk red"></i>
+			</label>
+			<input class="tool col-2" type="password" name="companyPw" placeholder="대소문자, 숫자, 특수문자 포함 6~15자" required>
+			<div class="fail-feedback">비밀번호에는 반드시 영문 대,소문자와 숫자, 특수문자가 포함되어야 합니다</div>
+		</div>
 	</div>
-	<div class="center">
-		<label>
-			비밀번호 확인
-			<i class="fa-solid fa-asterisk red"></i>
-		</label>
-		<input type="password" placeholder="비밀번호 한번 더 확인할게요" required>
+</div>
+<div class="row mt-4">
+	<div class="col">
+		<div class="center">
+			<label class="col-1">
+				비밀번호 확인
+				<i class="fa-solid fa-asterisk red"></i>
+			</label>
+			<input class="tool col-2" type="password" id="pw-reinput" placeholder="비밀번호를 한 번 더 입력하세요" required>
+			<div class="fail-feedback">비밀번호가 일치하지 않습니다</div>
+		    <div class="fail2-feedback">비밀번호를 먼저 입력하세요</div>
+		</div>
 	</div>
-	<div class="center">
-		<label>
-			회사명
-			<i class="fa-solid fa-asterisk red"></i>
-		</label>
-		<input type="text" name="companyName" placeholder="회사명" required>
+</div>
+<div class="row mt-4">
+	<div class="col">
+		<div class="center">
+			<label class="col-1">
+				회사명
+				<i class="fa-solid fa-asterisk red"></i>
+			</label>
+			<input class="tool col-2" type="text" name="companyName" placeholder="회사명" required>
+		</div>
 	</div>
+</div>
+	
+<div class="row mt-4">
+	<div class="col">	
 	<div class="center">
-		<label>
+		<label class="col-1">
 			이메일
 			<i class="fa-solid fa-asterisk red"></i>
 		</label>
-		<input type="email" name="companyEmail" placeholder="email@email.com" required>
+		<input class="tool col-2" type="email" name="companyEmail" placeholder="email@email.com" required>
 	</div>
+	</div>
+</div>
+	
+<div class="row mt-4">
+	<div class="col">	
 	<div class="center">
-		<label>
+		<label class="col-1">
 			연락처1
 			<i class="fa-solid fa-asterisk red"></i>
 		</label>
-		<input type="tel" name="companyContact1" placeholder="연락처 1" required>
+		<input class="tool col-2" type="tel" name="companyContact1" placeholder="숫자만 입력" required>
 	</div>
-	<div class="center">
-		<label>연락처2</label>
-		<input type="tel" name="companyContact2" placeholder="연락처 1">
 	</div>
-	<div class="center">
-            <label>팩스번호</label>
-            <input type="tel" name="companyFax" placeholder="팩스번호 입력해주삼">
-	</div>
-	<div class="center">
-            <label>사업자 등록번호</label>
-            <input type="text" name="companyBn" placeholder="'-' 포함 입력">
-	</div>
-	<div class="center">
-		<label>주소</label>
-	</div>
-	<div class="center">
-            <input type="text" name="companyZip"  readonly
-                    placeholder="우편번호" size="6" maxlength="6">
-            <button type="button" class="btn positive btn-address-search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </button>        
-            <button type="button" class="btn negative btn-address-clear">
-            	<i class="fa-solid fa-xmark"></i>
-            </button>
-	</div>
-	<div class="center">
-            <input type="text" name="companyAdd1" 
-                    placeholder="기본주소" readonly>
-	</div>
-	<div class="center">
-            <input type="text" name="companyAdd2" 
-                    placeholder="상세주소">
-	</div>
-	<div>
+</div>
 	
+<div class="row mt-4">
+	<div class="col">	
+		<div class="center">
+			<label class="col-1">연락처2</label>
+			<input class="tool col-2" type="tel" name="companyContact2" placeholder="숫자만 입력">
+		</div>
+	</div>
+</div>
+	
+<div class="row mt-4">
+	<div class="col">	
+		<div class="center">
+	            <label class="col-1">팩스번호</label>
+	            <input class="tool col-2" type="tel" name="companyFax" placeholder="팩스번호 입력해주삼">
+		</div>
+	</div>
+</div>
+	
+<div class="row mt-4">
+	<div class="col">	
+		<div class="center">
+	            <label class="col-1">사업자 등록번호</label>
+	            <input class="tool col-2" type="text" name="companyBn" placeholder="'-' 포함 입력">
+		</div>
+	</div>
+</div>
+	
+	
+<div class="row mt-4">
+	<div class="col">		
+		<div class="center">
+			<label class="col-1">주소</label>
+			<input class="tool col-1" type="text" name="companyZipcode"  readonly
+	                    placeholder="우편번호" size="6" maxlength="6">          
+	        <button type="button" class="btn positive btn-address-search">
+	        	<i class="fa-solid fa-magnifying-glass"></i>
+	        </button>        
+	        <button type="button" class="btn negative btn-address-clear">
+	        	<i class="fa-solid fa-xmark"></i>
+	        </button>
+		</div>
+	</div>
+</div>
+		
+<div class="row mt-2">
+	<div class="col">		
+		<div class="center">
+			<label class="col-1"></label>
+	    	<input class="tool col-2" type="text" name="companyAdd1" 
+	        		placeholder="기본주소" readonly>
+		</div>
+	</div>
+</div>
+		
+<div class="row mt-2">
+	<div class="col">		
+		<div class="center">
+			<label class="col-1"></label>
+	    	<input class="tool col-2" type="text" name="companyAdd2" 
+	               	placeholder="상세주소">
+		</div>
 	</div>
 </div>
 
-<div class="center my-10">
-	<button type="submit" class="btn positive">
-		<i class="fa-solid fa-user"></i>
-		회원가입
-	</button>
+<div class="row mt-4">
+	<div class="col">
+		<div class="center my-10">
+			<button type="submit" class="btn positive">
+				<i class="fa-solid fa-user"></i>
+				회원가입
+			</button>
+		</div>
+	</div>
 </div>
 
 </form>
