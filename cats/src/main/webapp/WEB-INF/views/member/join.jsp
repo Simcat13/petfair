@@ -3,7 +3,6 @@
 
 <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
 
-<!--
 <script type="text/javascript">
 	$(function(){
 	    //상태객체(React의 state로 개념이 이어짐)
@@ -12,7 +11,7 @@
 	        memberIdValid : false,
 	        memberPwValid : false,
 	        memberPwCheckValid : false,
-	        memberNickValid : false,
+	        memberNameValid : false,
 	        memberEmailValid : false,
 	        memberContactValid : false,
 	        memberBirthValid : true, //선택항목
@@ -22,7 +21,7 @@
 	        ok : function(){
 	            return this.memberIdValid 
 	                    && this.memberPwValid && this.memberPwCheckValid
-	                    && this.memberNickValid && this.memberEmailValid
+	                    && this.memberNameValid && this.memberEmailValid
 	                    && this.memberBirthValid && this.memberContactValid
 	                    && this.memberAddValid;
 	        },
@@ -75,34 +74,28 @@
 	                        .addClass(state.memberPwCheckValid ? "success" : "fail");
 	        }
 	    });
-	    $("[name=memberNick]").blur(function(){
-	        var regex = /^[가-힣0-9]{2,10}$/;
+	    $("[name=memberName]").blur(function(){
+	        var regex = /^[가-힣]{2,7}$/;
 	        var value = $(this).val();
 	
 	        if(regex.test(value)) {
 	            $.ajax({
-	                url:"/rest/member/checkMemberNick",
+	                url:"/rest/member/checkMemberName",
 	                method:"post",
-	                data : { memberNick : value },
+	                data : { memberName : value },
 	                success:function(response){
 	                    if(response) {//사용 가능한 경우 - success
-	                        state.memberNickValid = true;
-	                        $("[name=memberNick]")
+	                        state.memberNameValid = true;
+	                        $("[name=memberName]")
 	                            .removeClass("success fail fail2")
 	                            .addClass("success");
-	                    }
-	                    else {//이미 사용중인 경우 - fail2
-	                        state.memberNickValid = false;
-	                        $("[name=memberNick]")
-	                            .removeClass("success fail fail2")
-	                            .addClass("fail2");
 	                    }
 	                }
 	            });
 	        }
 	        else {//형식이 맞지 않는 경우 - fail
-	            state.memberNickValid = false;
-	            $("[name=memberNick]")
+	            state.memberNameValid = false;
+	            $("[name=memberName]")
 	                .removeClass("success fail fail2")
 	                .addClass("fail");
 	        }
@@ -221,7 +214,7 @@
 	    });
 	
 	    //주소는 세 개의 입력창이 모두 입력되거나 안되거나 둘 중 하나
-	    $("[name=memberAddress2]").blur(function(){
+	    $("[name=memberAdd2]").blur(function(){
 	        var post = $("[name=memberZipcode]").val();
 	        var address1 = $("[name=memberAdd1]").val();
 	        var address2 = $("[name=memberAdd2]").val();
@@ -246,7 +239,7 @@
 	        return state.ok();
 	    });
 	});
-</script> -->
+</script>
 
 <!-- 우편번호 -->
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -289,92 +282,161 @@
 
 <form action="join" method="post" autocomplete="off" class="check-form">
 
-<div class="container w-500">
-	<h1 class="center">회원가입(회원)</h1>
-</div>
-
-<div>
-	<div class="center">
-		<label>
-			아이디
-			<i class="fa-solid fa-asterisk red"></i>
-		</label>
-		<input type="text" name="memberId" placeholder="아이디쓸거입력하셈" required>
-	</div>
-	<div class="center">
-		<label>
-			비밀번호
-			<i class="fa-solid fa-asterisk red"></i>
-		</label>
-		<input type="password" name="memberPw" placeholder="비밀번호486" required>
-	</div>
-	<div class="center">
-		<label>
-			비밀번호 확인
-			<i class="fa-solid fa-asterisk red"></i>
-		</label>
-		<input type="password" name="memberPw" placeholder="비밀번호 한번 더 확인할게요" required>
-	</div>
-	<div class="center">
-		<label>
-			이름
-			<i class="fa-solid fa-asterisk red"></i>
-		</label>
-		<input type="text" name="memberName" placeholder="한국이름" required>
-	</div>
-	<div class="center">
-		<label>
-			이메일
-			<i class="fa-solid fa-asterisk red"></i>
-		</label>
-		<input type="email" name="memberEmail" placeholder="email@email.com" required>
-	</div>
-	<div class="center">
-		<label>
-			연락처1
-			<i class="fa-solid fa-asterisk red"></i>
-		</label>
-		<input type="tel" name="memberContact1" placeholder="연락처 1" required>
-	</div>
-	<div class="center">
-		<label>연락처2</label>
-		<input type="tel" name="memberContact2" placeholder="연락처 1">
-	</div>
-	<div class="center">
-            <label>생년월일</label>
-            <input type="date" name="memberBirth">
-	</div>
-	<div class="center">
-		<label>주소</label>
-	</div>
-	<div class="center">
-            <input type="text" name="memberZipcode"  readonly
-                    placeholder="우편번호" size="6" maxlength="6">
-            <button type="button" class="btn positive btn-address-search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </button>        
-            <button type="button" class="btn negative btn-address-clear">
-            	<i class="fa-solid fa-xmark"></i>
-            </button>
-	</div>
-	<div class="center">
-            <input type="text" name="memberAdd1" 
-                    placeholder="기본주소" readonly>
-	</div>
-	<div class="center">
-            <input type="text" name="memberAdd2" 
-                    placeholder="상세주소">
-	</div>
-	<div>
-	
+<div class="row mt-4">
+	<div class="col">
+		<div class="p-4 rounded text-center">
+        	<h3 class="center">회원가입 (회원용)</h3>
+        </div>	
 	</div>
 </div>
 
-<div class="center my-10">
-	<button type="submit" class="btn positive">
-		<i class="fa-solid fa-user"></i>
-		회원가입
-	</button>
+<div class="row mt-4">
+	<div class="col">
+		<div class="center">
+			<label>
+				아이디
+				<i class="fa-solid fa-asterisk red"></i>
+			</label>
+			<input class="tool" type="text" name="memberId" placeholder="영문 소문자시작, 숫자 포함 8~20자" onblur="checkId();" required>
+			<div class="fail-feedback">아이디는 소문자 시작, 숫자 포함 8~20자로 작성하세요</div>
+			<div class="fail2-feedback">이미 사용중인 아이디입니다</div>
+		</div>
+	</div>
+</div>
+
+<div class="row mt-4">
+	<div class="col">
+		<div class="center">
+			<label>
+				비밀번호
+				<i class="fa-solid fa-asterisk red"></i>
+			</label>
+			<input class="tool" type="password" name="memberPw" placeholder="영문 대소문자, 숫자, 특수문자 1개 이상 포함 6~15자" required>
+			<div class="fail-feedback">비밀번호에는 반드시 영문 대,소문자와 숫자, 특수문자가 포함되어야 합니다</div>
+		</div>
+	</div>
+</div>
+<div class="row mt-4">
+	<div class="col">
+		<div class="center">
+			<label>
+				비밀번호 확인
+				<i class="fa-solid fa-asterisk red"></i>
+			</label>
+			<input class="tool" type="password" id="pw-reinput" placeholder="비밀번호를 한 번 더 입력하세요" required>
+			<div class="fail-feedback">비밀번호가 일치하지 않습니다</div>
+		    <div class="fail2-feedback">비밀번호를 먼저 입력하세요</div>
+		</div>
+	</div>
+</div>
+
+<div class="row mt-4">
+	<div class="col">
+		<div class="center">
+			<label>
+				이름
+				<i class="fa-solid fa-asterisk red"></i>
+			</label>
+			<input class="tool" type="text" name="memberName" placeholder="한국 이름" required>
+			<div class="fail-feedback">이름은 한글 2~7자로 입력해주세요</div>
+		</div>
+	</div>
+</div>		
+
+<div class="row mt-4">
+	<div class="col">		
+		<div class="center">
+			<label>
+				이메일
+				<i class="fa-solid fa-asterisk red"></i>
+			</label>
+			<input class="tool" type="email" name="memberEmail" placeholder="email@email.com" required>
+		
+		</div>
+	</div>
+</div>
+
+<div class="row mt-4">
+	<div class="col">		
+		<div class="center">
+			<label>
+				연락처1
+				<i class="fa-solid fa-asterisk red"></i>
+			</label>
+			<input class="tool" type="tel" name="memberContact1" placeholder="연락처 1" required>
+			<div class="fail-feedback">올바르지 않은 형식입니다</div>
+		</div>
+	</div>
+</div>
+
+<div class="row mt-4">
+	<div class="col">		
+		<div class="center">
+			<label>연락처2</label>
+			<input class="tool" type="tel" name="memberContact2" placeholder="연락처 1">
+		</div>
+	</div>
+</div>
+		
+<div class="row mt-4">
+	<div class="col">		
+		<div class="center">
+	    	<label>생년월일</label>
+	   		<input class="tool" type="date" name="memberBirth">
+		</div>
+	</div>
+</div>
+		
+<div class="row mt-4">
+	<div class="col">		
+		<div class="center">
+			<label>주소</label>
+		</div>
+	</div>
+</div>
+		
+<div class="row mt-4">
+	<div class="col">		
+		<div class="center">
+	            <input type="text" name="memberZipcode"  readonly
+	                    placeholder="우편번호" size="6" maxlength="6">
+	            <button type="button" class="btn positive btn-address-search">
+	                <i class="fa-solid fa-magnifying-glass"></i>
+	            </button>        
+	            <button type="button" class="btn negative btn-address-clear">
+	            	<i class="fa-solid fa-xmark"></i>
+	            </button>
+		</div>
+	</div>
+</div>
+		
+<div class="row mt-2">
+	<div class="col">		
+		<div class="center">
+	            <input type="text" name="memberAdd1" 
+	                    placeholder="기본주소" readonly>
+		</div>
+	</div>
+</div>
+		
+<div class="row mt-2">
+	<div class="col">		
+		<div class="center">
+	            <input type="text" name="memberAdd2" 
+	                    placeholder="상세주소">
+		</div>
+	</div>
+</div>
+
+<div class="row mt-4">
+	<div class="col">
+		<div class="center my-10">
+			<button type="submit" class="btn positive">
+				<i class="fa-solid fa-user"></i>
+				회원가입
+			</button>
+		</div>
+	</div>
 </div>
 
 </form>

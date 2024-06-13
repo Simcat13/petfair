@@ -68,7 +68,7 @@
 			비밀번호 확인
 			<i class="fa-solid fa-asterisk red"></i>
 		</label>
-		<input type="password" name="companyPw" placeholder="비밀번호 한번 더 확인할게요" required>
+		<input type="password" placeholder="비밀번호 한번 더 확인할게요" required>
 	</div>
 	<div class="center">
 		<label>
