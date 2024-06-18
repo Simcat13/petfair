@@ -4,13 +4,13 @@
 
 <div class="center my-20">
 	<a href="${pageContext.request.contextPath}/member/join">
-		<button class="btn">일반회원 회원가입</button>
+		<button class="btn btn-primary rounded">일반회원 회원가입</button>
 	</a>
 </div>
 
 <div class="center my-10">
 	<a href="${pageContext.request.contextPath}/company/join">
-		<button class="btn">회사 회원가입</button>
+		<button class="btn btn-primary rounded">회사 회원가입</button>
 	</a>
 </div>
 
