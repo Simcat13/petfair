@@ -37,7 +37,7 @@ public class MemberController {
 		
 		return "redirect:joinSuccess";
 	}
-	@RequestMapping("/joinSuccess")
+	@GetMapping("/joinSuccess")
 	public String joinSuccess() {
 		return "member/joinSuccess";
 	}

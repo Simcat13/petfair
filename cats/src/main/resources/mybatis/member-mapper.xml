@@ -12,28 +12,28 @@
 		member_id, 
 		member_pw, 
 		member_name, 
-		member_birth, 
+		<if test="memberBirth != null">member_birth,</if>
 		member_email, 
 		<if test="memberZipcode != null"> member_zipcode,</if> 
 		<if test="memberAdd1 != null">member_add1,</if> 
 		<if test="memberAdd2 != null">member_add2,</if> 
 		member_contact1, 
-		member_contact2, 
-		member_interest, 
-		member_job
+		<if test="memberContact2 != null">member_contact2,</if>
+		<if test="memberInterest != null">member_interest,</if> 
+		<if test="memberJob != null">member_job</if>
 		) VALUES (
 		#{memberId}, 
 		#{memberPw}, 
 		#{memberName}, 
-		#{memberBirth}, 
+		<if test="memberBirth != null">#{memberBirth},</if>
 		#{memberEmail}, 
 		<if test="memberZipcode != null">#{memberZipcode}, </if> 
 		<if test="memberAdd1 != null">#{memberAdd1}, </if> 
 		<if test="memberAdd2 != null">#{memberAdd2}, </if> 
 		#{memberContact1}, 
-		#{memberContact2}, 
-		#{memberInterest}, 
-		#{memberJob}
+		<if test="memberContact2 != null">#{memberContact2},</if>
+		<if test="memberInterest != null">#{memberInterest},</if>
+		<if test="memberJob != null">#{memberJob}</if>
 		)
 	</insert>
 	

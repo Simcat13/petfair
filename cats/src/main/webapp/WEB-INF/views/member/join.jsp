@@ -13,17 +13,16 @@
 	        memberPwCheckValid : false,
 	        memberNameValid : false,
 	        memberEmailValid : false,
-	        memberContact1Valid : false,
-	        memberBirthValid : true, //선택항목
-	        memberAddValid : true,//선택항목
+	        memberContactValid : false,
+	       
 	        //객체에 함수를 변수처럼 생성할 수 있다
 	        //- this는 객체 자신(자바와 동일하지만 생략이 불가능)
 	        ok : function(){
 	            return this.memberIdValid 
 	                    && this.memberPwValid && this.memberPwCheckValid
 	                    && this.memberNameValid && this.memberEmailValid
-	                    && this.memberBirthValid && this.memberContact1Valid
-	                    && this.memberAddValid;
+	                    && this.memberContactValid;
+	                    
 	        },
 	    };
 	
@@ -158,7 +157,7 @@
                     memberEmail = email;
                 },
                 error:function(){
-                    alert("시스템 오류. 잠시 후 이용바람");
+                    alert("시스템 오류입니다. 잠시 후 다시 시도해주세요. \n계속해서 오류가 뜰 경우 문의 해 주시길 바랍니다.");
                 },
                 complete:function(){
                     $(btn).find("span").text("보내기");
@@ -222,7 +221,7 @@
 	        var isClear = post.length == 0 && address1.length == 0 && address2.length == 0;
 	        var isFill = post.length > 0 && address1.length > 0 && address2.length > 0;
 	
-	        state.memberAddressValid = isClear || isFill;
+	        state.memberAddValid = isClear || isFill;
 	
 	        $("[name=memberZipcode], [name=memberAdd1], [name=memberAdd2]")
 	                .removeClass("success fail")
@@ -350,8 +349,13 @@
 				이메일
 				<i class="fa-solid fa-asterisk red"></i>
 			</label>
-			<input class="tool col-2" type="email" name="memberEmail" placeholder="email@email.com" required>
-		
+			<input class="tool col-2" type="email" name="memberEmail" placeholder="email@email.com" required>		
+		</div>
+		<!-- <div class="center mt-2">
+			<button type="button" class="btn negative btn-send-cert me-5">
+				<i class="fa-solid fa-paper-plane"></i>
+			</button>
+		 -->
 		</div>
 	</div>
 </div>
