@@ -3,15 +3,15 @@
 <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>
 
 <div class="center my-20">
-<form action="${pageContext.request.contextPath}/member/join" method="get">
-	<button type="submit">일반회원 회원가입</button>
-</form>
+	<a href="${pageContext.request.contextPath}/member/join">
+		<button class="btn">일반회원 회원가입</button>
+	</a>
 </div>
 
 <div class="center my-10">
-<form action="${pageContext.request.contextPath}/company/join" method="get">
-	<button type="submit">회사 회원가입</button>
-</form>
+	<a href="${pageContext.request.contextPath}/company/join">
+		<button class="btn">회사 회원가입</button>
+	</a>
 </div>
 
 <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
