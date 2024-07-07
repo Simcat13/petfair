@@ -36,4 +36,8 @@ public class MemberRestController {
 		MemberDto memberDto = memberDao.selectOneMemberName(memberName);
 		return memberDto == null;
 	}
+	
+	//이메일 인증
+	
+	
 }

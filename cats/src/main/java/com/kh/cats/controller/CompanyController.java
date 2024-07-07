@@ -32,10 +32,15 @@ public class CompanyController {
 	public String join(@ModelAttribute CompanyDto companyDto) {
 		companyDao.insert(companyDto);
 
-		return "redirect:/";
+		return "redirect:joinSuccess";
+	}
+	//회원가입 성공
+	@GetMapping("/joinSuccess")
+	public String joinSuccess() {
+		return "company/joinSuccess";
 	}
 	
-	//로그인
+	//로그인 (로그인 시간 업데이트)
 	@GetMapping("/login")
 	public String login() {
 		return "company/login";
@@ -58,6 +63,7 @@ public class CompanyController {
 		}
 	}
 	
+	//로그아웃
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("loginId");
