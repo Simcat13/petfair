@@ -220,7 +220,7 @@
 <div class="row mt-4">
 	<div class="col">
 		<div class="p-4 rounded text-center">
-        	<h3 class="center">회원가입 (회원용)</h3>
+        	<h3 class="center"><i class="fa-solid fa-user"></i> 회원가입 (회원용)</h3>
         </div>	
 	</div>
 </div>
@@ -287,12 +287,13 @@
 			</label>
 			<input class="tool col-2" type="email" name="memberEmail" placeholder="email@email.com" required>		
 		</div>
-		<!-- <div class="center mt-2">
+		<!--
+		<div class="center mt-2">
 			<button type="button" class="btn negative btn-send-cert me-5">
 				<i class="fa-solid fa-paper-plane"></i>
-			</button>
-		 -->
+			</button>		 
 		</div>
+		-->
 	</div>
 </div>
 
