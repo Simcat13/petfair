@@ -37,6 +37,7 @@ public class MemberController {
 		
 		return "redirect:joinSuccess";
 	}
+	//가입 성공
 	@GetMapping("/joinSuccess")
 	public String joinSuccess() {
 		return "member/joinSuccess";
@@ -66,6 +67,7 @@ public class MemberController {
 		}
 	}
 	
+	//로그아웃
 	@RequestMapping("/logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("loginId");

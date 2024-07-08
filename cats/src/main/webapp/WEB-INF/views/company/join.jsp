@@ -47,7 +47,7 @@
 <div class="row mt-4">
 	<div class="col">
 		<div class="p-4 rounded text-center">
-        	<h3 class="center">회원가입 (회사용)</h3>
+        	<h3 class="center"><i class="fa-solid fa-building"></i> 회원가입 (회사용)</h3>
         </div>	
 	</div>
 </div>
