@@ -7,12 +7,12 @@
 <div class="row mt-5 pt-5">
 	<div class="col-6">
 		<a href="${pageContext.request.contextPath}/member/join">
-			<button class="btn btn-primary rounded">일반회원 회원가입</button>
+			<button class="btn btn-primary rounded p-5">일반회원 회원가입</button>
 		</a>
 	</div>
 	<div class="col-6">
 	<a href="${pageContext.request.contextPath}/company/join">
-		<button class="btn btn-primary rounded">회사 회원가입</button>
+		<button class="btn btn-primary rounded p-5">회사 회원가입</button>
 	</a>
 </div>
 </div>

@@ -15,6 +15,7 @@
 .cell {
 	margin-top: 10px;
 	margin-bottom: 10px;
+	place-items: center;
 }
 
 .w-30 {

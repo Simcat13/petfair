@@ -31,6 +31,7 @@
 .cell {
 	margin-top: 10px;
 	margin-bottom: 10px;
+	place-items: center;
 }
 .w-30{width:30%;}
 .w-50{width:50%;}
