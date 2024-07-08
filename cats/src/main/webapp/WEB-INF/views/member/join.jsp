@@ -283,7 +283,7 @@
 			<div class="w-70">	
 				<input class="tool w-75" type="text" name="memberId"
 					placeholder="영문 소문자시작, 숫자 포함 8~20자" required>
-				<div class="fail-feedback">아이디는 소문자 시작, 숫자 포함 8~20자로 작성하세요</div>
+				<div class="fail-feedback">아이디는 소문자 시작, 숫자 포함 8~20자로 입력하세요</div>
 				<div class="fail2-feedback">이미 사용중인 아이디입니다</div>
 			</div>
 		</div>
@@ -324,7 +324,7 @@
 			<div class="w-70">	
 				<input class="tool w-75" type="text" name="memberName"
 					placeholder="한국 이름" required>
-				<div class="fail-feedback">이름은 한글 2~7자로 입력해주세요</div>
+				<div class="fail-feedback">이름은 한글 2~7자로 입력하세요</div>
 			</div>
 		</div>
 
@@ -356,7 +356,7 @@
 			</div>
 			<div class="w-70">
 				<input class="tool w-75" type="tel" name="memberContact1"
-					placeholder="숫자만 입력" required>
+					placeholder="숫자만 입력하세요" required>
 				<div class="fail-feedback">올바르지 않은 형식입니다</div>
 			</div>
 		</div>
@@ -368,7 +368,7 @@
 			</div>
 			<div class="w-70">
 				<input class="tool w-75"
-					type="tel" name="memberContact2" placeholder="숫자만 입력">
+					type="tel" name="memberContact2" placeholder="숫자만 입력하세요">
 			</div>
 		</div>
 
