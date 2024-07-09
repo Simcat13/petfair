@@ -3,7 +3,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <jsp:include page="/WEB-INF/views/template/header.jsp"></jsp:include>    
-    
+<style>
+.container {
+	/*text-align:center; /*내부 요소 정렬*/
+	margin-left: auto;
+	margin-right: auto;
+}
+.w-16{width:16%}
+</style>  
 <form action="login" method="post" autocomplete="off">
 
 <div class="container center mt-4 pt-5">
@@ -16,7 +23,7 @@
 		<div class="row mt-4">
 			<div class="col">
 				<label class="col-1">아이디</label>
-				<input class="tool col" type="text" name="memberId" required>
+				<input class="tool w-16" type="text" name="memberId" required>
 			</div>
 		</div>
 
@@ -24,7 +31,7 @@
 		<div class="row mt-2">
 			<div class="col">
 				<label class="col-1">비밀번호</label>
-				<input class="tool col" type="password" name="memberPw" required>
+				<input class="tool w-16" type="password" name="memberPw" required>
 			</div>
 		</div>
 		

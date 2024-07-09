@@ -13,25 +13,27 @@
 		company_pw, 
 		company_name, 
 		company_email, 
-		company_zipcode, 
-		company_add1, 
-		company_add2, 
+		<if test="companyZipcode != null">company_zipcode,</if>
+		<if test="companyAdd1 != null">company_add1,</if>
+		<if test="companyAdd2 != null">company_add2,</if> 
 		company_contact1, 
-		company_contact2, 
+		<if test="companyContact2 != null">company_contact2,</if>
 		company_bn,
-		company_fax
+		company_agree,
+		<if test="companyFax != null">company_fax</if>
 		) VALUES (
 		#{companyId}, 
 		#{companyPw}, 
 		#{companyName},
 		#{companyEmail}, 
-		#{companyZipcode}, 
-		#{companyAdd1}, 
-		#{companyAdd2}, 
+		<if test="companyZipcode != null">#{companyZipcode},</if> 
+		<if test="companyAdd1 != null">#{companyAdd1},</if> 
+		<if test="companyAdd2 != null">#{companyAdd2},</if> 
 		#{companyContact1}, 
-		#{companyContact2}, 
-		#{companyBn}, 
-		#{companyFax}
+		<if test="companyContact2 != null">#{companyContact2},</if>
+		#{companyBn},
+		#{companyAgree},
+		<if test="companyFax != null">#{companyFax}</if> 
 		)
 	</insert>
 	
@@ -57,5 +59,10 @@
 	<update id="updateLogin">
 		update company set company_login = CURRENT_TIMESTAMP where company_id = #{companyId}
 	</update>
+	
+	<!-- 사업자 번호 찾기 -->
+	<select id="bn" resultType="CompanyDto">
+		select * from company where company_bn = #{companyBn}
+	</select>
 
 </mapper>

@@ -19,7 +19,9 @@
 		<if test="memberAdd2 != null">member_add2,</if> 
 		member_contact1, 
 		<if test="memberContact2 != null">member_contact2,</if>
-		<if test="memberInterest != null">member_interest,</if> 
+		<if test="memberInterest != null">member_interest,</if>
+		member_agree,
+		<if test="memberEvent != null">member_event,</if>
 		<if test="memberJob != null">member_job</if>
 		) VALUES (
 		#{memberId}, 
@@ -33,6 +35,8 @@
 		#{memberContact1}, 
 		<if test="memberContact2 != null">#{memberContact2},</if>
 		<if test="memberInterest != null">#{memberInterest},</if>
+		#{memberAgree},
+		<if test="memberEvent != null">#{memberEvent},</if>
 		<if test="memberJob != null">#{memberJob}</if>
 		)
 	</insert>

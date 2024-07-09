@@ -12,19 +12,24 @@ public class CompanyDao {
 
 	@Autowired
 	private SqlSession sqlSession;
-	
-	//가입
+
+	// 가입
 	public void insert(CompanyDto companyDto) {
 		sqlSession.insert("company.insert", companyDto);
 	}
-	
-	//ID 셀렉원
+
+	// ID 셀렉원
 	public CompanyDto selectOne(String companyId) {
 		return sqlSession.selectOne("company.find", companyId);
 	}
-	
-	//로그인시간 업데이트
+
+	// 로그인시간 업데이트
 	public boolean updateLogin(String companyId) {
 		return sqlSession.update("company.updateLogin", companyId) > 0;
+	}
+
+	// 사업자 번호 찾기
+	public CompanyDto selectOneCompanyBn(String companyBn) {
+		return sqlSession.selectOne("company.bn", companyBn);
 	}
 }
