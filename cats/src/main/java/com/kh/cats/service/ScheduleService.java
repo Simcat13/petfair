@@ -14,7 +14,7 @@ public class ScheduleService {
 	@Autowired
 	private FairDao fairDao;
 	
-	@Scheduled(cron = "0 0 0 * * *")
+	@Scheduled(cron = "0 0 * * * *")
 	public void changeFairStatus() {
 		fairDao.editStatus();
 		System.out.println("실행됨");
