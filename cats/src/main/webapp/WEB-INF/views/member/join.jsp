@@ -282,7 +282,7 @@
 				<label>아이디 <i class="fa-solid fa-asterisk red"></i></label>
 			</div>
 			<div class="w-70">	
-				<input class="tool w-75" type="text" name="memberId"
+				<input class="tool w-75 rounded" type="text" name="memberId"
 					placeholder="영문 소문자시작, 숫자 포함 8~20자" required>
 				<div class="fail-feedback">아이디는 소문자 시작, 숫자 포함 8~20자로 입력하세요</div>
 				<div class="fail2-feedback">이미 사용중인 아이디입니다</div>
@@ -296,7 +296,7 @@
 				</label>
 			</div>
 			<div class="w-70">	
-				<input class="tool w-75" type="password" name="memberPw"
+				<input class="tool w-75 rounded" type="password" name="memberPw"
 					placeholder="대소문자, 숫자, 특수문자 포함 6~15자" required>
 				<div class="fail-feedback">비밀번호에는 반드시 영문 대,소문자와 숫자, 특수문자가
 					포함되어야 합니다</div>
@@ -310,7 +310,7 @@
 				</label>
 			</div>
 			<div class="w-70">
-				<input class="tool w-75" type="password" id="pw-reinput"
+				<input class="tool w-75 rounded" type="password" id="pw-reinput"
 					placeholder="비밀번호를 한 번 더 입력하세요" required>
 				<div class="fail-feedback">비밀번호가 일치하지 않습니다</div>
 				<div class="fail2-feedback">비밀번호를 먼저 입력하세요</div>
@@ -323,7 +323,7 @@
 				</label>
 			</div>
 			<div class="w-70">	
-				<input class="tool w-75" type="text" name="memberName"
+				<input class="tool w-75 rounded" type="text" name="memberName"
 					placeholder="한국 이름" required>
 				<div class="fail-feedback">이름은 한글 2~7자로 입력하세요</div>
 			</div>
@@ -337,7 +337,7 @@
 				</label>
 			</div>
 			<div class="w-70">
-				<input class="tool w-75" type="email" name="memberEmail"
+				<input class="tool w-75 rounded" type="email" name="memberEmail"
 					placeholder="email@email.com" required>
 			</div>
 			<!--
@@ -356,7 +356,7 @@
 				</label>
 			</div>
 			<div class="w-70">
-				<input class="tool w-75" type="tel" name="memberContact1"
+				<input class="tool w-75 rounded" type="tel" name="memberContact1"
 					placeholder="숫자만 입력하세요" required>
 				<div class="fail-feedback">올바르지 않은 형식입니다</div>
 			</div>
@@ -368,7 +368,7 @@
 				<label>연락처2</label>
 			</div>
 			<div class="w-70">
-				<input class="tool w-75"
+				<input class="tool w-75 rounded"
 					type="tel" name="memberContact2" placeholder="숫자만 입력하세요">
 			</div>
 		</div>
@@ -378,7 +378,7 @@
 				<label>생년월일</label>
 			</div>
 			<div class="w-70">
-				<input class="tool w-75" type="date" name="memberBirth">
+				<input class="tool w-75 rounded" type="date" name="memberBirth">
 			</div>
 		</div>
 
@@ -387,7 +387,7 @@
 				<label>주소</label>
 			</div>
 			<div class="w-70">
-				<input class="tool w-50"
+				<input class="tool w-50 rounded"
 					type="text" name="memberZipcode" readonly placeholder="우편번호"
 					size="6" maxlength="6">
 				<button type="button" class="btn positive btn-address-search">
@@ -404,7 +404,7 @@
 				<label></label>
 			</div>
 			<div class="w-70">				
-				<input class="tool w-75" type="text"
+				<input class="tool w-75 rounded" type="text"
 					name="memberAdd1" placeholder="기본주소" readonly>
 			</div>
 		</div>
@@ -414,7 +414,7 @@
 				<label></label>
 			</div>
 			<div class="w-70">				
-				<input class="tool w-75" type="text"
+				<input class="tool w-75 rounded" type="text"
 					name="memberAdd2" placeholder="상세주소">
 			</div>
 		</div>
@@ -424,7 +424,7 @@
 				<label>흥미분야</label>
 			</div>
 			<div class="w-70">				
-				<input class="tool w-75"
+				<input class="tool w-75 rounded"
 					type="text" name="memberInterest" placeholder="ex)고양이, 강아지, 고슴도치 등">
 			</div>
 		</div>
@@ -434,7 +434,7 @@
 				<label>직업</label>
 			</div>
 			<div class="w-70">					
-				<input class="tool w-75"
+				<input class="tool w-75 rounded"
 					type="text" name="memberJob" placeholder="ex)직장인, 무직 등">
 			</div>
 		</div>

@@ -282,7 +282,7 @@
 				</label>
 			</div>
 			<div class="w-70">
-				<input class="tool w-75" type="text" name="companyId"
+				<input class="tool w-75 rounded" type="text" name="companyId"
 					placeholder="영문 소문자시작, 숫자 포함 8~20자" required>
 				<div class="fail-feedback">아이디는 소문자 시작, 숫자 포함 8~20자로 입력하세요</div>
 				<div class="fail2-feedback">이미 사용중인 아이디입니다</div>
@@ -296,7 +296,7 @@
 				</label>
 			</div>
 			<div class="w-70">
-				<input class="tool w-75" type="password" name="companyPw"
+				<input class="tool w-75 rounded" type="password" name="companyPw"
 					placeholder="대소문자, 숫자, 특수문자 포함 6~15자" required>
 				<div class="fail-feedback">비밀번호에는 반드시 영문 대,소문자와 숫자, 특수문자가
 					포함되어야 합니다</div>
@@ -309,7 +309,7 @@
 				</label>
 			</div>
 			<div class="w-70">
-				<input class="tool w-75" type="password" id="pw-reinput"
+				<input class="tool w-75 rounded" type="password" id="pw-reinput"
 					placeholder="비밀번호를 한 번 더 입력하세요" required>
 				<div class="fail-feedback">비밀번호가 일치하지 않습니다</div>
 				<div class="fail2-feedback">비밀번호를 먼저 입력하세요</div>
@@ -322,7 +322,7 @@
 				</label>
 			</div>
 			<div class="w-70">
-				<input class="tool w-75" type="text" name="companyName"
+				<input class="tool w-75 rounded" type="text" name="companyName"
 					placeholder="회사명" required>
 			</div>
 		</div>
@@ -333,7 +333,7 @@
 				</label>
 			</div>
 			<div class="w-70">
-				<input class="tool w-75" type="email" name="companyEmail"
+				<input class="tool w-75 rounded" type="email" name="companyEmail"
 					placeholder="email@email.com" required>
 			</div>
 		</div>
@@ -344,7 +344,7 @@
 				</label>
 			</div>
 			<div class="w-70">
-				<input class="tool w-75" type="text" name="companyBn"
+				<input class="tool w-75 rounded" type="text" name="companyBn"
 					placeholder="'-' 포함 입력" required>
 				<div class="fail-feedback">XXX-XX-XXXXX 형식으로 입력하세요</div>
 				<div class="fail2-feedback">이미 사용중인 사업자 번호입니다</div>
@@ -357,7 +357,7 @@
 				</label>
 			</div>
 			<div class="w-70">
-				<input class="tool w-75" type="tel" name="companyContact1"
+				<input class="tool w-75 rounded" type="tel" name="companyContact1"
 					placeholder="숫자만 입력하세요" required>
 			</div>
 		</div>
@@ -367,7 +367,7 @@
 				<label>연락처2</label>
 			</div>
 			<div class="w-70">
-				<input class="tool w-75" type="tel" name="companyContact2"
+				<input class="tool w-75 rounded" type="tel" name="companyContact2"
 					placeholder="숫자만 입력하세요">
 			</div>
 		</div>
@@ -377,7 +377,7 @@
 				<label>팩스번호</label>
 			</div>
 			<div class="w-70">
-				<input class="tool w-75" type="tel" name="companyFax"
+				<input class="tool w-75 rounded" type="tel" name="companyFax"
 					placeholder="팩스번호를 입력하세요">
 			</div>
 		</div>
@@ -387,7 +387,7 @@
 				<label>주소</label>
 			</div>
 			<div class="w-70">
-				<input class="tool w-50" type="text" name="companyZipcode" readonly
+				<input class="tool w-50 rounded" type="text" name="companyZipcode" readonly
 					placeholder="우편번호" size="6" maxlength="6">
 				<button type="button" class="btn positive btn-address-search">
 					<i class="fa-solid fa-magnifying-glass"></i>
@@ -403,7 +403,7 @@
 				<label></label>
 			</div>
 			<div class="w-70">
-				<input class="tool w-75" type="text" name="companyAdd1"
+				<input class="tool w-75 rounded" type="text" name="companyAdd1"
 					placeholder="기본주소" readonly>
 			</div>
 		</div>
@@ -413,7 +413,7 @@
 				<label></label>
 			</div>
 			<div class="w-70">
-				<input class="tool w-75" type="text" name="companyAdd2"
+				<input class="tool w-75 rounded" type="text" name="companyAdd2"
 					placeholder="상세주소">
 			</div>
 		</div>

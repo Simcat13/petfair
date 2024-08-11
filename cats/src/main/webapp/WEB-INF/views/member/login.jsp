@@ -23,7 +23,7 @@
 		<div class="row mt-4">
 			<div class="col">
 				<label class="col-1">아이디</label>
-				<input class="tool w-16" type="text" name="memberId" required>
+				<input class="tool w-16 rounded" type="text" name="memberId" required>
 			</div>
 		</div>
 
@@ -31,9 +31,15 @@
 		<div class="row mt-2">
 			<div class="col">
 				<label class="col-1">비밀번호</label>
-				<input class="tool w-16" type="password" name="memberPw" required>
+				<input class="tool w-16 rounded" type="password" name="memberPw" required>
 			</div>
 		</div>
+		
+		<c:if test="${param.error != null}">
+			<div class="cell center">
+				<h3 style="color: red; font-size: 14px;">로그인 정보가 일치하지 않습니다</h3>
+			</div>
+		</c:if>
 		
 		<div class="row mt-4">
 			<div class="col">
@@ -41,11 +47,6 @@
 			</div>
 		</div>
 
-		<c:if test="${param.error != null}">
-			<div class="cell center">
-				<h3 style="color: red">로그인 정보가 일치하지 않습니다</h3>
-			</div>
-		</c:if>
 
 	</div>
 </form>
