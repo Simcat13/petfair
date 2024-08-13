@@ -57,7 +57,7 @@ h6 {
 			</div>
 		</div>
 		<div class="cell right">
-			<a href="insert" class="btn btn-secondary">박람회 등록</a> 
+			<a href="insert" class="btn btn-secondary">박람회 등록 어쩔</a>
 		</div>
 		<%-- 네비게이터 --%>
 		<jsp:include page="/WEB-INF/views/template/navigator.jsp"></jsp:include>
