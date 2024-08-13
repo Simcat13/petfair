@@ -57,10 +57,24 @@ h6 {
 			</div>
 		</div>
 		<div class="cell right">
-			<a href="insert" class="btn btn-secondary">박람회 등록</a> 
+			<a href="insert" class="btn btn-secondary">박람회 등록 어쩔ㅋㅋ</a>
 		</div>
 		<%-- 네비게이터 --%>
 		<jsp:include page="/WEB-INF/views/template/navigator.jsp"></jsp:include>
+		
+		<div class="cell center">
+			<%-- 검색창 --%>
+			<form action="list" method="get">
+				<div class="cell">
+					<select name="column" class="tool">
+						<option value="fair_name" ${param.column == 'fair_name' ? 'selected' : ' '}>박람회명</option>
+						<option value="fair_info" ${param.column == 'fair_info' ? 'selected' : ' '}>내용</option>
+					</select>
+					<input type="search" name="keyword" placeholder="검색어를 입력하세요" class="tool" value="${param.keyword}">
+					<button class="btn btn-primary">검색</button>
+				</div>
+			</form>
+		</div>
 	</div>
 </div>
 

@@ -45,5 +45,10 @@ public class FairDao {
 		return sqlSession.selectOne("fair.find", fairNo);
 	}
 	
+	//박람회수정
+	public boolean edit(FairDto fairDto) {
+		return sqlSession.update("fair.edit", fairDto) > 0;
+	}
+	
 	
 }
